@@ -28,7 +28,7 @@ function camelToSkewer(string $str): string
 
 /**
  * Get the file last modified time or the current time if the file doesn't exist
- * 
+ *
  * @param string $filename The file name
  * @return int The file last modified time or the current time if the file doesn't exist
  */
@@ -68,10 +68,22 @@ function fileModifiedTime(string $filename): int
     <link rel="mask-icon" href="icon.svg" color="#fb8c00">
 
     <script type="text/javascript" src="./js/script.js?v=<?= fileModifiedTime("./js/script.js") ?>" defer></script>
-    <script type="text/javascript" src="./js/accordion.js?v=<?= fileModifiedTime("./js/accordion.js") ?>" defer></script>
-    <script type="text/javascript" src="./js/toggle-dark.js?v=<?= fileModifiedTime("./js/toggle-dark.js") ?>" defer></script>
-    <script type="text/javascript" src="./js/jscolor.min.js?v=<?= fileModifiedTime("./js/jscolor.min.js") ?>" defer></script>
+    <script type="text/javascript" src="./js/accordion.js?v=<?= fileModifiedTime(
+        "./js/accordion.js",
+    ) ?>" defer></script>
+    <script type="text/javascript" src="./js/toggle-dark.js?v=<?= fileModifiedTime(
+        "./js/toggle-dark.js",
+    ) ?>" defer></script>
+    <script type="text/javascript" src="./js/jscolor.min.js?v=<?= fileModifiedTime(
+        "./js/jscolor.min.js",
+    ) ?>" defer></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    
+    <!-- Vercel Speed Insights -->
+    <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 
 <body <?php echo $darkmode === "on" ? 'data-theme="dark"' : ""; ?>>
